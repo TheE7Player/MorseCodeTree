@@ -11,6 +11,8 @@ Toolset:
 
 > As stated, the solution is only aimed for Windows systems, due to using `GetAsyncKeyState` and key states from the `<Windows.h>` library. Feel free to customize to suit to either another operating system target, or cross-platform solution.
 
+![morse code output from terminal](https://github.com/TheE7Player/MorseCodeTree/blob/main/resources/c++_output.jpg?raw=true)
+
 ## Aims
 [1] Learn C++ by applying a solution to a problem
 [2] Solve the problem without using a simple solution (apply a more difficult data structure)
@@ -138,6 +140,10 @@ For example:
     root->dash->dash->dash->dash->AddDit('9');
            -     -     -     -      .           = 9
 ```
+
+I tracked each node and its adjacent children to ensure all nodes possibilities where written (I stopped highlighting near the end):
+![Binary Tree Morse Decoding](https://github.com/TheE7Player/MorseCodeTree/blob/main/resources/mt_progress.jpg?raw=true)
+
 ## 1.2 Look-Flow for the Tree (Find the character for the pulses)
 Let's investigate the `ProcessMoreBuffer` function from `/src/MorseTreeCode.cpp` from line 122.
 ```c++
@@ -324,9 +330,9 @@ This approach raises many issues:
 
 Here is a diagram of the old, and new approach:
 
-[SHOW OLD TWO THREADS IMAGE HERE]
+![Old threading keyloop](![InputLoop_Original.png](https://github.com/TheE7Player/MorseCodeTree/blob/main/resources/InputLoop_Original.png?raw=true)
 
-[SHOW NEW THREAD IMAGE HERE]
+![New threading keyloop](![InputLoop_New.png](https://github.com/TheE7Player/MorseCodeTree/blob/main/resources/InputLoop_New.png?raw=true)
 
 Noticeable changes compared to the first revision approach:
 - All in one thread approach, more control, and less resource heavy
