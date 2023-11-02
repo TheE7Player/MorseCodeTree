@@ -328,11 +328,11 @@ This approach raises many issues:
 - Not likely thread-safe ( race conditions, due to two threads )
 - Likely timing issues between threads in most cases (not severe, but may lead to unwanted behaviours)
 
-Here is a diagram of the old, and new approach:
+Here is a diagram of the old:
+![Old threading keyloop](https://github.com/TheE7Player/MorseCodeTree/blob/main/resources/InputLoop_Original.png?raw=true)
 
-![Old threading keyloop](![InputLoop_Original.png](https://github.com/TheE7Player/MorseCodeTree/blob/main/resources/InputLoop_Original.png?raw=true)
-
-![New threading keyloop](![InputLoop_New.png](https://github.com/TheE7Player/MorseCodeTree/blob/main/resources/InputLoop_New.png?raw=true)
+and new approach:
+![New threading keyloop](https://github.com/TheE7Player/MorseCodeTree/blob/main/resources/InputLoop_New.png?raw=true)
 
 Noticeable changes compared to the first revision approach:
 - All in one thread approach, more control, and less resource heavy
